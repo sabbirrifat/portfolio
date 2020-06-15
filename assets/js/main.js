@@ -1,9 +1,4 @@
-/**
-* Template Name: DevFolio - v2.2.0
-* Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 (function($) {
   "use strict";
 
@@ -125,24 +120,38 @@
     });
   }
 
-  /*--/ Testimonials owl /--*/
-  $('#testimonial-mf').owlCarousel({
-    margin: 20,
-    autoplay: true,
-    autoplayTimeout: 4000,
-    autoplayHoverPause: true,
-    responsive: {
-      0: {
-        items: 1,
-      }
-    }
-  });
-
-  // Initiate venobox (lightbox feature used in portofilo)
-  $(document).ready(function() {
-    $('.venobox').venobox({
-      'share': false
-    });
-  });
-
 })(jQuery);
+
+
+/* Scroll Animation */
+
+window.sr = ScrollReveal();
+
+sr.reveal('.animate-left', {
+    origin: 'left',
+    duration: 1000,
+    distance: '25rem',
+    delay: 300
+});
+
+sr.reveal('.animate-right', {
+    origin: 'right',
+    duration: 1000,
+    distance: '25rem',
+    delay: 600
+});
+
+sr.reveal('.animate-top', {
+    origin: 'top',
+    duration: 1000,
+    distance: '25rem',
+    delay: 600
+});
+
+sr.reveal('.animate-bottom', {
+    origin: 'bottom',
+    duration: 1000,
+    distance: '25rem',
+    delay: 600
+});
+

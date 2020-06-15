@@ -2,6 +2,7 @@
 body {
   background-color: #f5f5f5;
   color: #4e4e4e;
+  overflow-x: hidden;
 }
 
 h1,
@@ -119,9 +120,7 @@ a:hover {
   padding-top: 4rem;
 }
 
-.sect-mt4 {
-  margin-top: 4rem;
-}
+
 
 /*--/ Title s /--*/
 .title-s {
@@ -651,6 +650,32 @@ a:hover {
   color: #fff;
   font-weight: 600;
   font-size: 3rem;
+  opacity: 0;
+  animation: introTitle 0.5s forwards;
+  animation-delay: 0.5s;
+}
+
+.intro .headerButtonStyle{
+  padding: 0.6rem 1.7rem;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  border: 5px solid #fff;
+  opacity: 0;
+  animation: introButton 0.5s forwards;
+  animation-delay: 1s;
+}
+
+.intro .headerButtonStyle:hover{
+  background-color: #fff;
+  color: #4e4e4e;
+}
+
+.intro .buttonUpArrow{
+  animation: upndown 2s infinite;
+  animation-delay: 1s;
 }
 
 @media (min-width: 768px) {
@@ -662,6 +687,7 @@ a:hover {
 .intro .intro-subtitle {
   font-size: 1.5rem;
   font-weight: 300;
+  margin-bottom: 60px;
 }
 
 @media (min-width: 768px) {
@@ -710,9 +736,83 @@ a:hover {
   color: #fff;
 }
 
+
+@keyframes introTitle{
+  0%{
+    transform: translateY(-20px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introButton{
+  0%{
+    transform: translateY(30px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes upndown{
+  0%{
+      opacity: 0;
+  }
+  50%{
+      opacity: 1;
+  }
+  100%{
+      opacity: 0;
+      transform: translateY(10px);
+  }
+}
+
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+
+#about{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #fff;
+}
+
+.about-mf .aboutContentStyle{
+  margin-top: 100px;
+}
+
+.about-mf img{
+ width: 100%;
+}
+
+.about-mf img:hover{
+  transform: scale(1.3);
+  transition: 0.3s ease-in-out;
+}
+
+.about-mf h3{
+  font-size: 36px;
+}
+
+.about-mf h2{
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.about-mf p{
+  margin-bottom: 30px;
+}
+
+.about-mf .imgContentStyle{
+  padding-right: 15%;
+  padding-left: 15%;
+}
+
+
 .about-mf .box-shadow-full {
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -752,12 +852,46 @@ a:hover {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+
+#service{
+  padding-top: 5% !important;
+  padding-bottom: 5%;
+}
+
+.service-box h2{
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.service-box p{
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-bottom: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #f0eeee;
+}
+
+.service-box p:last-child{
+  border-bottom: none;
+  padding-top: 5px;
+}
+
 .service-box {
   background-color: #fff;
   padding: 2.5rem 1.3rem;
   border-radius: 1rem;
   margin-bottom: 3rem;
 }
+
+.service-box:hover{
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
+
 
 .service-box:hover .ico-circle {
   transition: all 500ms ease;
@@ -793,10 +927,15 @@ a:hover {
 # Project
 --------------------------------------------------------------*/
 
+.projectCardStyle{
+  margin-top: 5%;
+}
+
 
 .projectCard{
-  height: 400px;
+  height: 500px;
   position: relative;
+  margin-bottom: 50px;
   transform-style: preserve-3d;
 }
 
@@ -811,12 +950,14 @@ a:hover {
   justify-content: center;
   align-items: center;
   backface-visibility: hidden;
-  transition: 2s ease-in-out;
+  transition: 0.8s ease-in-out;
   transform: perspective(500px) rotateY(0deg);
 }
 
 .projectCard .face.front{
-  background: #ff0;
+  -webkit-box-shadow: 0px 10px 39px -12px rgba(0,0,0,0.77);
+-moz-box-shadow: 0px 10px 39px -12px rgba(0,0,0,0.77);
+box-shadow: 0px 10px 39px -12px rgba(0,0,0,0.77);
 }
 
 .projectCard:hover .face.front{
@@ -824,10 +965,74 @@ a:hover {
 }
 
 .projectCard .face.back{
-  background: #3bc2ff;
+  -webkit-box-shadow: 0px 10px 39px -12px rgba(0,0,0,0.77);
+-moz-box-shadow: 0px 10px 39px -12px rgba(0,0,0,0.77);
+box-shadow: 0px 10px 39px -12px rgba(0,0,0,0.77);
   color: #fff;
   transform: perspective(500px) rotateY(180deg);
 }
+
+
+/* Every Project Back */
+
+.projectCard .piclavaback{
+  background: rgb(253,29,29);
+  background: linear-gradient(180deg, rgba(253,29,29,1) 27%, rgba(252,176,69,1) 100%);
+}
+
+.projectCard .serizeiback{
+  background: #2AF598;
+  background: linear-gradient(180deg, #08AEEA 27%, #2AF598 100%);
+}
+
+.projectCard .smartbrainback{
+  background: #ff5edf;
+  background: linear-gradient(180deg,#ff5edf 27%, #04c8de 100%);
+}
+
+.projectCard .restaurantback{
+  background: #c02425;
+  background: linear-gradient(180deg, rgba(253,115,29,1) 0%, rgba(133,98,98,1) 100%);
+}
+
+.projectCard .growthhyperback{
+  background: #ff8057;
+  background: linear-gradient(180deg,#ff8057  27%, #007bff 100%);
+}
+
+.projectCard .tictactoeback{
+  background: rgb(253,115,29);
+  background: linear-gradient(180deg, rgba(253,115,29,1) 0%, rgba(133,98,98,1) 100%);
+}
+
+
+
+.projectCard .cardButton{
+  padding: 1.5rem 3rem;
+  font-size: 1.4rem;
+  line-height: 1.5em;
+  border-radius: 10rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  color: #777;
+  background-color: #fff;
+  text-decoration: none;
+  transition: all .2s;
+}
+
+.projectCard .cardButton:hover{
+  transform: translateY(-10px);
+  -webkit-box-shadow: 1px 13px 20px -2px rgba(0,0,0,0.58);
+  -moz-box-shadow: 1px 13px 20px -2px rgba(0,0,0,0.58);
+  box-shadow: 1px 13px 20px -2px rgba(0,0,0,0.58);
+}
+
+
+
+/* End Every Project Back */
+
 
 .projectCard:hover .face.back{
   transform: perspective(500px) rotateY(360deg);
@@ -838,6 +1043,38 @@ a:hover {
   text-transform: uppercase;
   transform: perspective(500px) translateZ(50px);
 }
+
+
+.projectCard .cardImage{
+  background-image: url(../img/etc/flames.png);
+}
+
+.projectCard img{
+  width: 100%;
+}
+
+.projectCard ul li{
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-bottom: 1px solid #f0efef;
+}
+
+.projectCard ul{
+  padding-right: 10%;
+  padding-left: 10%;
+
+}
+
+.projectCard .cardStyle h4{
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 50px;
+
+}
+
+
+
+
 
 
 
@@ -877,6 +1114,13 @@ a:hover {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+
+#work{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #fff;
+}
+
 .work-box {
   margin-bottom: 3rem;
   -webkit-backface-visibility: hidden;
@@ -1038,18 +1282,6 @@ a:hover {
   padding: 15px;
 }
 
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  -webkit-animation: animate-loading 1s linear infinite;
-  animation: animate-loading 1s linear infinite;
-}
 
 .php-email-form input, .php-email-form textarea {
   border-radius: 0;
