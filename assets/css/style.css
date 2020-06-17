@@ -781,11 +781,13 @@ a:hover {
 }
 
 .about-mf .aboutContentStyle{
+  padding-left: 10%;
+  padding-right: 10%;
   margin-top: 100px;
 }
 
 .about-mf img{
- width: 100%;
+ width: 200px;
 }
 
 .about-mf img:hover{
@@ -808,8 +810,8 @@ a:hover {
 }
 
 .about-mf .imgContentStyle{
-  padding-right: 15%;
-  padding-left: 15%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 
@@ -1566,4 +1568,16 @@ footer .credits {
 
 footer .credits a {
   color: #fff;
+}
+
+
+/* Responsive Design */
+
+@media only screen and (max-width: 536px){
+
+  .projectCard{
+    margin-bottom: 150px;
+  }
+
+
 }
